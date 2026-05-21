@@ -22,7 +22,7 @@ const destinations: Destination[] = [
     year: "2026",
     description:
       "A leading fintech powering secure payments, financial operations, and business automation for individuals, corporates, SMEs, and governments.",
-    href: "/destinations/albania",
+    href: "https://readiespay.vercel.app/",
   },
   {
     id: "queenstown",
@@ -31,7 +31,7 @@ const destinations: Destination[] = [
     year: "2026",
     description:
       "A leading microfinance institution providing accessible financial services to underserved communities, enabling economic empowerment and sustainable development.",
-    href: "/destinations/queenstown",
+    href: "https://readies.ng/",
   },
   {
     id: "hallstatt",
@@ -40,7 +40,7 @@ const destinations: Destination[] = [
     year: "2025",
     description:
       "A leading investment firm managing diverse portfolios with a focus on sustainable and responsible investing.",
-    href: "/destinations/hallstatt",
+    href: "/#",
   },
   // Add more destinations as needed — the carousel handles overflow
 ];
