@@ -80,11 +80,9 @@ export default function HeroSection2() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
-            <NavDropdown
-              key={link.label}
-              label={link.label}
-              children={link.children}
-            />
+            <NavDropdown key={link.label} label={link.label}>
+              {link.children}
+            </NavDropdown>
           ))}
         </div>
 
@@ -196,7 +194,7 @@ export default function HeroSection2() {
           {/* Hero content */}
           <div className="relative z-10 flex flex-col justify-center min-h-[78vh] px-8 xl:px-16 pb-24 pt-14 max-w-4xl">
             <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
-              Powering Tomorrow's
+              Powering Tomorrow&apos;s
               <br />
               <span className="text-green-400">Digital</span> Infrastructure
             </h1>
