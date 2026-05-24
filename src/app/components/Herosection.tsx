@@ -1,238 +1,340 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
-import Image from "next/image";
 
-const NAV_LINKS = [
-  //   {
-  //     label: "Solutions",
-  //     href: "#",
-  //     children: [
-  //       "Payment Processing",
-  //       "Banking Infrastructure",
-  //       "Digital Wallets",
-  //       "Merchant Tools",
-  //     ],
-  //   },
-  {
-    label: "Products",
-    href: "#",
-    children: ["Readiespay", "Readies Banking", "Readies Finance"],
-  },
-  {
-    label: "Company",
-    href: "#",
-    children: ["About Us", "Leadership", "Careers", "Press"],
-  },
+// --- Trusted By Partners ---
+// Replace src with real logo image paths. Name is used as alt text.
+const partners = [
+  { name: "Visa", src: "/logos/visa.svg" },
+  { name: "Mastercard", src: "/logos/mastercard.svg" },
+  { name: "Interswitch", src: "/logos/interswitch.svg" },
+  { name: "Access Bank", src: "/logos/access-bank.svg" },
+  { name: "Flutterwave", src: "/logos/flutterwave.svg" },
+  { name: "SEC Nigeria", src: "/logos/sec.svg" },
 ];
 
-function NavDropdown({
-  label,
-  children,
-}: {
-  label: string;
-  children: string[];
-}) {
-  const [open, setOpen] = useState(false);
+// Flip ticker — cycles through partners vertically
+function PartnerTicker() {
+  const [index, setIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimating(true);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % partners.length);
+        setAnimating(false);
+      }, 350);
+    }, 2200);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      className="relative overflow-hidden"
+      style={{ height: "28px", minWidth: "120px" }}
     >
-      <button className="flex items-center gap-1 text-sm font-medium text-white/90 hover:text-white transition-colors py-2">
-        {label}
-        <ChevronDown
-          size={14}
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+      <div
+        style={{
+          transform: animating ? "translateY(-110%)" : "translateY(0%)",
+          opacity: animating ? 0 : 1,
+          transition:
+            "transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease",
+        }}
+        className="flex items-center gap-2"
+      >
+        {/* Logo placeholder box */}
+        <div
+          className="w-5 h-5 rounded flex-shrink-0"
+          style={{ background: "rgba(255,255,255,0.15)" }}
+          aria-hidden
         />
-      </button>
-
-      {open && (
-        <div className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-2xl shadow-black/20 border border-gray-100 py-2 min-w-[200px] z-50">
-          {children.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-      )}
+        <span className="text-white/70 text-sm font-medium whitespace-nowrap">
+          {partners[index].name}
+        </span>
+      </div>
     </div>
   );
 }
 
 export default function HeroSection() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden font-sans">
-      {/* ── Video background ── */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        // 👉 Replace /hero-video.mp4 with your actual video path
-        src="/cooperate.mp4"
-      />
-
-      {/* ── Green-tinted dark overlay ── */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-950/80 via-green-900/60 to-emerald-950/75" />
-
-      {/* ── Subtle noise grain texture ── */}
+    <section
+      className="relative w-full min-h-screen flex flex-col overflow-hidden"
+      style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
+    >
+      {/* ── BACKDROP ──────────────────────────────────────────── */}
+      {/* Replace the div below with your own <Image> or <video> */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "128px 128px",
+          background:
+            "linear-gradient(135deg, #080a12 0%, #0d1b2a 40%, #0a1628 70%, #080a12 100%)",
+        }}
+      >
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/cooperate.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+
+        {/* Gradient orbs for depth */}
+        <div
+          className="absolute rounded-full blur-[120px]"
+          style={{
+            width: "600px",
+            height: "600px",
+            background: "rgba(220,38,38,0.12)",
+            top: "-100px",
+            right: "-100px",
+          }}
+        />
+        <div
+          className="absolute rounded-full blur-[100px]"
+          style={{
+            width: "400px",
+            height: "400px",
+            background: "rgba(29,78,216,0.15)",
+            bottom: "100px",
+            left: "-50px",
+          }}
+        />
+      </div>
+
+      {/* Dark overlay gradient */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,1.25) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,1.25) 100%)",
         }}
       />
 
-      {/* ── Decorative green glow ── */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[120px] pointer-events-none" />
-
-      {/* ── Content wrapper ── */}
-      <div className="relative z-10 flex flex-col min-h-screen">
-        {/* ── Navbar ── */}
-        <nav className="flex items-center justify-between px-8 xl:px-16 py-5 bg-white/10 border-b border-white/10">
-          {/* Logo placeholder — replace with your <Image> component */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            {/* 👉 Replace this placeholder with your actual logo */}
-
-            <Image
-              className="dark:invert"
-              src="/readies-logo.png"
-              alt="Readies logo"
-              width={100}
-              height={20}
-              priority
-            />
-
-            {/* <div className="w-36 h-9 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center">
-              <span className="text-white/70 text-xs font-semibold tracking-widest uppercase">
-                Your Logo
-              </span>
-            </div> */}
-          </Link>
-
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <NavDropdown key={link.label} label={link.label}>
-                {link.children}
-              </NavDropdown>
-            ))}
-          </div>
-
-          {/* Right side */}
-          <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#"
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
-            >
-              Resources <ChevronDown size={14} />
-            </a>
-
-            {/* Country flag toggle — Nigeria placeholder */}
-            <button className="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 rounded-full px-3 py-1.5 transition-colors">
-              {/* Nigerian flag SVG */}
-              <svg
-                width="20"
-                height="14"
-                viewBox="0 0 20 14"
-                className="rounded-sm overflow-hidden"
-              >
-                <rect width="7" height="14" fill="#008751" />
-                <rect x="7" width="6" height="14" fill="#ffffff" />
-                <rect x="13" width="7" height="14" fill="#008751" />
-              </svg>
-              <ChevronDown size="12" className="text-white/80" />
-            </button>
-          </div>
-
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden text-white p-1"
-            onClick={() => setMobileOpen(!mobileOpen)}
+      {/* ── MAIN CONTENT ─────────────────────────────────────── */}
+      <div className="relative z-10 flex flex-col flex-1 max-w-7xl mx-auto w-full px-6 md:px-10 pt-36 pb-16">
+        {/* Headline */}
+        <h1
+          className="mx-auto text-center text-white font-bold leading-[1.05] tracking-tight mb-6"
+          style={{
+            fontSize: "clamp(2.6rem, 4.6vw, 3.8rem)",
+            fontFamily: "'Sora', sans-serif",
+            letterSpacing: "-0.03em",
+            maxWidth: "820px",
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(24px)",
+            transition: "opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s",
+          }}
+        >
+          Building Africa&apos;s Most{" "}
+          <span
+            className="relative inline-block"
+            style={{
+              WebkitTextStroke: "1.5px rgba(3, 209, 106,0.8)",
+              color: "transparent",
+            }}
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
+            Trusted
+          </span>{" "}
+          Financial Ecosystem.
+        </h1>
 
-        {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="md:hidden absolute top-[73px] left-0 right-0 bg-green-950/95 backdrop-blur-md border-b border-white/10 z-50 py-4 px-8">
-            {NAV_LINKS.map((link) => (
-              <div key={link.label} className="py-3 border-b border-white/10">
-                <p className="text-sm font-semibold text-white mb-2">
-                  {link.label}
-                </p>
-                {link.children.map((child) => (
-                  <a
-                    key={child}
-                    href="#"
-                    className="block text-sm text-white/60 hover:text-white py-1 pl-3 transition-colors"
-                  >
-                    {child}
-                  </a>
-                ))}
-              </div>
-            ))}
-            <a href="#" className="block text-sm text-white/80 py-3">
-              Resources
-            </a>
-          </div>
-        )}
+        {/* Subline */}
+        <p
+          className="mx-auto text-center text-white/60 text-xs md:text-sm leading-relaxed mb-10"
+          style={{
+            maxWidth: "560px",
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
+          }}
+        >
+          One group. Three powerful platforms — seamless payments, accessible
+          microfinance, and intelligent investing. Built for individuals and
+          businesses across Africa.
+        </p>
 
-        {/* ── Hero content ── */}
-        <div className="flex-1 flex flex-col justify-center px-8 xl:px-16 pb-20 pt-12 max-w-4xl">
-          {/* Eyebrow tag */}
-          {/* <div className="inline-flex items-center gap-2 mb-8 self-start">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-green-300 text-xs font-semibold uppercase tracking-[0.2em]">
-              Africa's Payment Infrastructure
+        {/* CTAs */}
+        <div
+          className="flex flex-wrap items-center gap-4 mx-auto justify-center"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.7s ease 0.5s, transform 0.7s ease 0.5s",
+          }}
+        >
+          <Link
+            href="#get-started"
+            className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full text-white font-semibold text-xs md:text-sm transition-all duration-300 hover:gap-4"
+            style={{
+              background: "#03d16a",
+              boxShadow: "0 0 32px rgba(3, 209, 106, 0.4)",
+            }}
+          >
+            Explore Our Portfolio
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0.5">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path
+                  d="M1.5 5.5h8M6 2l3.5 3.5L6 9"
+                  stroke="white"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
-          </div> */}
+          </Link>
+          <Link
+            href="#products"
+            className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-medium text-xs md:text-sm border border-white/20 hover:border-white/50 hover:text-white transition-all duration-300"
+          >
+            Partner With Us
+          </Link>
+        </div>
 
-          {/* Headline */}
-          <h1 className="text-5xl sm:text-6xl xl:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-6">
-            Powering Tomorrow&apos;s
-            <br />
-            <span className="text-green-400">Digital</span> Infrastructure
-          </h1>
+        {/* ── TRUSTED BY ───────────────────────────────────────── */}
+        <div
+          className="mt-auto pt-16"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: "opacity 0.7s ease 0.8s",
+          }}
+        >
+          {/* Divider */}
+          <div
+            className="mb-5 h-px w-full"
+            style={{
+              background:
+                "linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent)",
+            }}
+          />
 
-          {/* Subheading */}
-          <p className="text-white/70 text-lg sm:text-xl max-w-xl leading-relaxed mb-10 font-light">
-            Sustaining technology ecosystems that help commerce evolve,
-            businesses grow and individuals thrive.
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+            <p className="text-white/40 text-xs tracking-[0.15em] uppercase flex-shrink-0">
+              Trusted by
+            </p>
 
-          {/* CTA buttons */}
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 bg-white text-green-900 font-bold text-sm px-7 py-4 rounded-xl hover:bg-green-50 transition-colors shadow-lg shadow-black/20"
-            >
-              Innovate With Us
-            </a>
-            {/* <a
-              href="#"
-              className="inline-flex items-center gap-2 bg-green-500/20 hover:bg-green-500/30 border border-green-400/40 text-white font-semibold text-sm px-7 py-4 rounded-xl transition-colors backdrop-blur-sm"
-            >
-              Get Started
-            </a> */}
+            {/* Partner flip ticker strip */}
+            <div className="flex items-center gap-6 flex-wrap">
+              {/* Static logos (replace img src with your real logos) */}
+              {partners.map((partner, i) => (
+                <PartnerLogoFlip
+                  key={partner.name}
+                  partner={partner}
+                  index={i}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+// Individual logo with staggered vertical flip-in animation + periodic re-flip
+function PartnerLogoFlip({
+  partner,
+  index,
+}: {
+  partner: { name: string; src: string };
+  index: number;
+}) {
+  const [flipped, setFlipped] = useState(false);
+  const [entered, setEntered] = useState(false);
+
+  // Entrance stagger
+  useEffect(() => {
+    const t = setTimeout(() => setEntered(true), 900 + index * 120);
+    return () => clearTimeout(t);
+  }, [index]);
+
+  // Periodic re-flip every ~4s with stagger offset
+  useEffect(() => {
+    const base = 4000 + index * 600;
+    const run = () => {
+      setFlipped(true);
+      setTimeout(() => setFlipped(false), 420);
+    };
+    const t = setInterval(run, base);
+    return () => clearInterval(t);
+  }, [index]);
+
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{
+        height: "32px",
+        opacity: entered ? 1 : 0,
+        transform: entered ? "translateY(0)" : "translateY(14px)",
+        transition: `opacity 0.5s ease, transform 0.5s ease`,
+      }}
+    >
+      {/* Current logo */}
+      <div
+        style={{
+          transform: flipped
+            ? "translateY(-120%) rotateX(45deg)"
+            : "translateY(0) rotateX(0deg)",
+          opacity: flipped ? 0 : 1,
+          transition:
+            "transform 0.38s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease",
+        }}
+        className="flex items-center gap-2"
+      >
+        {/* Logo placeholder — replace with <Image> */}
+        <div
+          className="rounded flex items-center justify-center"
+          style={{
+            width: "80px",
+            height: "28px",
+            background: "rgba(255,255,255,0.08)",
+            border: "1px solid rgba(255,255,255,0.1)",
+          }}
+        >
+          <span className="text-white/50 text-[10px] font-semibold tracking-wide">
+            {partner.name}
+          </span>
+        </div>
+      </div>
+
+      {/* Flipped-in next state (same content, just the animation illusion) */}
+      <div
+        className="absolute inset-0 flex items-center"
+        style={{
+          transform: flipped
+            ? "translateY(0) rotateX(0deg)"
+            : "translateY(120%) rotateX(-45deg)",
+          opacity: flipped ? 1 : 0,
+          transition:
+            "transform 0.38s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease",
+        }}
+      >
+        <div
+          className="rounded flex items-center justify-center"
+          style={{
+            width: "80px",
+            height: "28px",
+            background: "rgba(255,255,255,0.12)",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+        >
+          <span className="text-white/70 text-[10px] font-semibold tracking-wide">
+            {partner.name}
+          </span>
+        </div>
+      </div>
+    </div>
   );
 }

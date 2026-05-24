@@ -1,21 +1,28 @@
 // import Image from "next/image";
-// import HeroSection from "./components/Herosection";
+import HeroSection from "./components/Herosection";
 // import HeroSection2 from "./components/Herosection2";
 import Navbar from "@/app/components/Navbar";
 import HeroSection3 from "@/app/components/HeroSection3";
 import IntroSection from "@/app/components/IntroSection";
-import ProductCards from "./components/productcards";
+// import ProductCards from "./components/productcards";
+import OurBusinesses from "@/app/components/Ourbusinesses";
+import Contactcta from "./components/contactcta";
+import ExecutiveLeadership from "./components/ExecutiveLeadership";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      {/* 
-       <HeroSection2 /> */}
-      <HeroSection3 />
+      <HeroSection />
+      {/* <HeroSection2 /> */}
+      {/* <HeroSection3 /> */}
       <IntroSection />
-      <ProductCards />
-      {/* <HeroSection /> */}
+      {/* <ProductCards /> */}
+      <OurBusinesses />
+      <ExecutiveLeadership />
+      <Contactcta />
+      <Footer />
       {/* <Image
             className="dark:invert"
             src="/next.svg"
