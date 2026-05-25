@@ -5,7 +5,7 @@ module.exports = {
       script: "npm",
       args: "run start",
       env: {
-        PORT: 3008, // Set the port environment variable here
+        PORT: 3008, // port environment variable here
       },
     },
   ],
