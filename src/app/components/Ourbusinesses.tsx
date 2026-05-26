@@ -1,6 +1,9 @@
 "use client";
 
+// import { link } from "fs";
+// import { Link } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 interface Business {
   id: number;
@@ -10,6 +13,7 @@ interface Business {
   accent: string;
   bgGradient: string;
   stats: { label: string; value: string }[];
+  link?: string;
 }
 
 const businesses: Business[] = [
@@ -18,7 +22,7 @@ const businesses: Business[] = [
     title: "Payment Gateway",
     categories: ["Fintech", "Payments", "API"],
     description:
-      "A seamless, secure payment infrastructure powering thousands of transactions across Africa. Accept cards, bank transfers, and mobile money with sub-second processing speeds.",
+      "A seamless, secure payment infrastructure powering thousands of transactions across Africa. Accept cards, bank transfers, and mobile money with record processing speeds.",
 
     accent: "#2563EB",
     bgGradient: "from-blue-900 via-blue-800 to-slate-900",
@@ -26,6 +30,7 @@ const businesses: Business[] = [
       { label: "Uptime", value: "99.99%" },
       { label: "Currencies", value: "15+" },
     ],
+    link: "https://readiespay.vercel.app/",
   },
   {
     id: 2,
@@ -40,13 +45,14 @@ const businesses: Business[] = [
       { label: "Loan Disbursed", value: "₦2B+" },
       { label: "Customers", value: "50K+" },
     ],
+    link: "/#",
   },
   {
     id: 3,
-    title: "Investment Platform",
-    categories: ["Investments", "Wealth", "Growth"],
+    title: "All-in-One Finance",
+    categories: ["Banking", "Investments", "Trading"],
     description:
-      "A modern investment platform enabling retail investors to grow wealth through curated portfolios, fixed income, and real estate-backed instruments.",
+      "Readies brings together mobile banking, halal investments, and stock trading into a single, seamless financial ecosystem — built for the modern Nigerian.",
 
     accent: "#DC2626",
     bgGradient: "from-red-900 via-rose-800 to-slate-900",
@@ -54,6 +60,7 @@ const businesses: Business[] = [
       { label: "AUM", value: "₦5B+" },
       { label: "Returns", value: "18% avg" },
     ],
+    link: "https://readies.ng/",
   },
 ];
 
@@ -257,15 +264,18 @@ export default function OurBusinesses() {
                     ))}
                   </div>
 
-                  <button
-                    className="group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-white/30 hover:border-white/70 transition-all duration-300"
+                  <Link
+                    href={biz.link ?? "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-white/30 hover:border-white/70 transition-all duration-300"
                     style={{ background: "rgba(255,255,255,0.1)" }}
                   >
                     READ MORE
                     <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
                       →
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
 

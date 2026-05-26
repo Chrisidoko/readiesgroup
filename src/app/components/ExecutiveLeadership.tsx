@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 
 interface Executive {
   id: number;
@@ -9,6 +10,7 @@ interface Executive {
   bio: string;
   accentColor: string;
   bgColor: string;
+  image: string;
 }
 
 const executives: Executive[] = [
@@ -19,6 +21,7 @@ const executives: Executive[] = [
     bio: "Muhammad Gabbi brings 20+ years of fintech leadership across West Africa, having previously led digital transformation at two of Nigeria's top-tier banks.",
     accentColor: "#1D4ED8",
     bgColor: "#1e3a8a",
+    image: "/leadership/GabiPic.jpeg",
   },
   {
     id: 2,
@@ -27,6 +30,7 @@ const executives: Executive[] = [
     bio: "Chidinma architected Readies' core payment rails and microservices infrastructure.",
     accentColor: "#059669",
     bgColor: "#065f46",
+    image: "/leadership/ChidinmaPic.jpeg",
   },
   {
     id: 3,
@@ -35,6 +39,7 @@ const executives: Executive[] = [
     bio: "With a background in development finance and CBN regulation, Emeka has grown the bank's loan book from ₦50M to over ₦2B in three years.",
     accentColor: "#DC2626",
     bgColor: "#7f1d1d",
+    image: "/leadership/EmekaPic.jpeg",
   },
   {
     id: 4,
@@ -43,6 +48,7 @@ const executives: Executive[] = [
     bio: "Fatima manages Readies' ₦5B+ AUM across fixed income, equities and alternative assets. She brings deep capital markets expertise from her tenure at Stanbic IBTC",
     accentColor: "#7C3AED",
     bgColor: "#4c1d95",
+    image: "/leadership/FatimaPic.jpeg",
   },
   {
     id: 5,
@@ -51,6 +57,7 @@ const executives: Executive[] = [
     bio: "A chartered accountant with Big Four experience, Tunde oversees financial reporting, treasury and investor relations.",
     accentColor: "#0891B2",
     bgColor: "#0c4a6e",
+    image: "/leadership/TundePic.jpeg",
   },
   {
     id: 6,
@@ -59,6 +66,7 @@ const executives: Executive[] = [
     bio: "Ngozi ensures Readies operates within the full bounds of CBN, SEC and NDIC regulations.",
     accentColor: "#D97706",
     bgColor: "#78350f",
+    image: "/leadership/NgoziPic.jpeg",
   },
 ];
 
@@ -209,8 +217,16 @@ export default function ExecutiveLeadership() {
                       background: `linear-gradient(135deg, ${exec.bgColor} 0%, #1e293b 100%)`,
                     }}
                   >
+                    <Image
+                      src={exec.image}
+                      alt={exec.name}
+                      width={300}
+                      height={360}
+                      className="object-cover w-full h-full"
+                      loading="eager"
+                    />
                     {/* Subtle pattern */}
-                    <svg
+                    {/* <svg
                       className="absolute inset-0 w-full h-full opacity-10"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -231,7 +247,7 @@ export default function ExecutiveLeadership() {
                         height="100%"
                         fill={`url(#pat-${exec.id})`}
                       />
-                    </svg>
+                    </svg> */}
                   </div>
 
                   {/* Hover bio overlay */}
