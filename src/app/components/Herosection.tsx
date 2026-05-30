@@ -160,7 +160,7 @@ export default function HeroSection() {
             transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
           }}
         >
-          One group. Three powerful platforms — seamless payments, accessible
+          One group. Powerful platforms for seamless payments, accessible
           microfinance, and intelligent investing. Built for individuals and
           businesses across Africa.
         </p>
@@ -175,7 +175,7 @@ export default function HeroSection() {
           }}
         >
           <Link
-            href="#get-started"
+            href="/#portfolio"
             className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full text-white font-semibold text-xs md:text-sm transition-all duration-300 hover:gap-4"
             style={{
               background: "#03d16a",
@@ -196,7 +196,7 @@ export default function HeroSection() {
             </span>
           </Link>
           <Link
-            href="#products"
+            href="mailto:info@readiesgroup.com"
             className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-medium text-xs md:text-sm border border-white/20 hover:border-white/50 hover:text-white transition-all duration-300"
           >
             Partner With Us

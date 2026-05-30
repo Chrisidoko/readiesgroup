@@ -11,7 +11,8 @@ export default function ContactCard() {
           If you&apos;re building for scale, there&apos;s <br /> no alternative
         </h1>
         <Link
-          href="/contact"
+          // href="/contact"
+          href="mailto:info@readiesgroup.com"
           className="inline-flex items-center gap-2 bg-white text-black text-base font-medium rounded-full px-6 py-3 w-fit hover:bg-white/90 transition-colors duration-200 [&>span]:hover:translate-x-0.5 [&>span]:hover:-translate-y-0.5"
         >
           Contact Us

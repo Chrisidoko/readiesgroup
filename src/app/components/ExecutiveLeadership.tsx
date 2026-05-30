@@ -25,49 +25,49 @@ const executives: Executive[] = [
   },
   {
     id: 2,
-    name: "Chidinma Eze",
+    name: "Siraj M. Abdullah",
     title: "Chief Technology Officer",
-    bio: "Chidinma architected Readies' core payment rails and microservices infrastructure.",
+    bio: "Siraj architected Readies' core payment rails and microservices infrastructure.",
     accentColor: "#059669",
     bgColor: "#065f46",
-    image: "/leadership/ChidinmaPic.jpeg",
+    image: "/leadership/sirage-abdullahi.png",
   },
   {
     id: 3,
-    name: "Emeka Nwosu",
+    name: "Olushola Nwosu",
     title: "MD, Microfinance Bank",
-    bio: "With a background in development finance and CBN regulation, Emeka has grown the bank's loan book from ₦50M to over ₦2B in three years.",
+    bio: "With a background in development finance and CBN regulation, Olushola has grown the bank's loan book from ₦50M to over ₦2B in three years.",
     accentColor: "#DC2626",
     bgColor: "#7f1d1d",
-    image: "/leadership/EmekaPic.jpeg",
+    image: "/leadership/olushola-micheal.png",
   },
   {
     id: 4,
-    name: "Fatima Bello",
+    name: "Abayomi Oyekola",
     title: "Chief Investment Officer",
-    bio: "Fatima manages Readies' ₦5B+ AUM across fixed income, equities and alternative assets. She brings deep capital markets expertise from her tenure at Stanbic IBTC",
+    bio: "Abayomi manages Readies' ₦5B+ AUM across fixed income, equities and alternative assets. She brings deep capital markets expertise from her tenure at Stanbic IBTC",
     accentColor: "#7C3AED",
     bgColor: "#4c1d95",
-    image: "/leadership/FatimaPic.jpeg",
+    image: "/leadership/abayomi.jpg",
   },
-  {
-    id: 5,
-    name: "Tunde Adesanya",
-    title: "Chief Financial Officer",
-    bio: "A chartered accountant with Big Four experience, Tunde oversees financial reporting, treasury and investor relations.",
-    accentColor: "#0891B2",
-    bgColor: "#0c4a6e",
-    image: "/leadership/TundePic.jpeg",
-  },
-  {
-    id: 6,
-    name: "Ngozi Okonkwo",
-    title: "Chief Risk & Compliance Officer",
-    bio: "Ngozi ensures Readies operates within the full bounds of CBN, SEC and NDIC regulations.",
-    accentColor: "#D97706",
-    bgColor: "#78350f",
-    image: "/leadership/NgoziPic.jpeg",
-  },
+  // {
+  //   id: 5,
+  //   name: "Tunde Adesanya",
+  //   title: "Chief Financial Officer",
+  //   bio: "A chartered accountant with Big Four experience, Tunde oversees financial reporting, treasury and investor relations.",
+  //   accentColor: "#0891B2",
+  //   bgColor: "#0c4a6e",
+  //   image: "/leadership/TundePic.jpeg",
+  // },
+  // {
+  //   id: 6,
+  //   name: "Ngozi Okonkwo",
+  //   title: "Chief Risk & Compliance Officer",
+  //   bio: "Ngozi ensures Readies operates within the full bounds of CBN, SEC and NDIC regulations.",
+  //   accentColor: "#D97706",
+  //   bgColor: "#78350f",
+  //   image: "/leadership/NgoziPic.jpeg",
+  // },
 ];
 
 export default function ExecutiveLeadership() {
@@ -154,7 +154,7 @@ export default function ExecutiveLeadership() {
         {/* Divider */}
         <div className="flex items-center justify-center gap-1 mt-8">
           <div className="h-[1.5px] w-16 bg-[#E2E8F0] rounded-full" />
-          <div className="h-[3px] w-20 bg-[#DC2626] rounded-full" />
+          <div className="h-[3px] w-20 bg-[#03D16A] rounded-full" />
           <div className="h-[1.5px] w-16 bg-[#E2E8F0] rounded-full" />
         </div>
       </div>
