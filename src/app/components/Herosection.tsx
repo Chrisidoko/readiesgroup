@@ -6,12 +6,12 @@ import Link from "next/link";
 // --- Trusted By Partners ---
 // Replace src with real logo image paths. Name is used as alt text.
 const partners = [
-  { name: "Visa", src: "/logos/visa.svg" },
-  { name: "Mastercard", src: "/logos/mastercard.svg" },
-  { name: "Interswitch", src: "/logos/interswitch.svg" },
-  { name: "Access Bank", src: "/logos/access-bank.svg" },
-  { name: "Flutterwave", src: "/logos/flutterwave.svg" },
-  { name: "SEC Nigeria", src: "/logos/sec.svg" },
+  { name: "D`namaz Capital", src: "/logos/visa.svg" },
+  { name: "Golden Securities", src: "/logos/mastercard.svg" },
+  { name: "Readiespay Gateway", src: "/logos/interswitch.svg" },
+  { name: "Manam Professional", src: "/logos/access-bank.svg" },
+  { name: "Readies MFB", src: "/logos/flutterwave.svg" },
+  // { name: "SEC Nigeria", src: "/logos/sec.svg" },
 ];
 
 // Flip ticker — cycles through partners vertically
@@ -196,7 +196,7 @@ export default function HeroSection() {
             </span>
           </Link>
           <Link
-            href="mailto:info@readiesgroup.com"
+            href="/partner_with_us"
             className="flex items-center gap-2 px-7 py-3.5 rounded-full text-white/80 font-medium text-xs md:text-sm border border-white/20 hover:border-white/50 hover:text-white transition-all duration-300"
           >
             Partner With Us
@@ -222,7 +222,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <p className="text-white/40 text-xs tracking-[0.15em] uppercase flex-shrink-0">
-              Trusted by
+              Our Subsidiaries
             </p>
 
             {/* Partner flip ticker strip */}
@@ -297,7 +297,7 @@ function PartnerLogoFlip({
         <div
           className="rounded flex items-center justify-center"
           style={{
-            width: "80px",
+            width: "120px",
             height: "28px",
             background: "rgba(255,255,255,0.08)",
             border: "1px solid rgba(255,255,255,0.1)",

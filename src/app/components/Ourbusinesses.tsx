@@ -52,8 +52,8 @@ const businesses: Business[] = [
   },
   {
     id: 3,
-    title: "All-in-One Finance",
-    categories: ["Banking", "Investments", "Trading"],
+    title: "All-in-One Platform",
+    categories: ["Asset Management", "Investments", "Trading"],
     description:
       "Readies brings together mobile banking, halal investments, and stock trading into a single, seamless financial ecosystem — built for the modern Nigerian.",
     accent: "#DC2626",
@@ -115,7 +115,8 @@ function RedirectOverlay({
       return;
     }
     const start = performance.now();
-    const duration = 2200; // ms — matches the redirect delay
+    // Made an edit here --- check for later
+    const duration = 6000; // ms — matches the redirect delay
     let frame: number;
     const tick = (now: number) => {
       const p = Math.min((now - start) / duration, 1);
@@ -525,7 +526,7 @@ export default function OurBusinesses() {
       redirectTimer.current = setTimeout(() => {
         setOverlayVisible(false);
         window.open(href, "_blank", "noopener,noreferrer");
-      }, 2400);
+      }, 6000);
     },
     [],
   );

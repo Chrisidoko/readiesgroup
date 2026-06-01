@@ -133,7 +133,7 @@ export default function Navbar() {
             <Link
               href="#get-started"
               className="flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-semibold text-white"
-              style={{ background: "#DC2626" }}
+              style={{ background: "#03d16a" }}
             >
               Get Started →
             </Link>

@@ -25,11 +25,11 @@ const sectors: Sector[] = [
   },
   {
     id: 2,
-    label: "Healthcare",
-    tag: "FINTECH",
+    label: "Public Sector",
+    tag: "GOVERNMENT",
     description:
-      "Compliant payment flows built for hospitals, clinics, and health-tech platforms across Nigeria.",
-    image: "/images/sector-health.jpg",
+      "Providing efficiency in government services and revenue assurance.",
+    image: "/images/sector-gov.jpg",
     // services: ["Insurance billing", "Patient collections", "HMO settlements"],
     accentColor: "#059669",
   },
@@ -548,7 +548,8 @@ export default function BusinessesWeServe() {
             className="flex items-center gap-2 text-white/50 text-sm font-medium hover:text-white transition-colors duration-200"
             style={{ fontFamily: "'Sora', sans-serif" }}
           >
-            Don&apos;t see your industry?
+            Need a tailored solution?
+            {/* Don&apos;t see your industry? */}
             <span className="text-white/30">Talk to us →</span>
           </a>
           <div

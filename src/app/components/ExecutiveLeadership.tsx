@@ -183,7 +183,7 @@ export default function ExecutiveLeadership() {
         {/* Cards strip */}
         <div
           ref={scrollRef}
-          className="flex gap-6 overflow-x-auto px-10 md:px-16 pb-6"
+          className="flex items-center justify-center gap-8 overflow-x-auto px-10 md:px-16 pb-6"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -303,7 +303,7 @@ export default function ExecutiveLeadership() {
       </div>
 
       {/* Navigation arrows */}
-      <div
+      {/* <div
         className="flex items-center justify-center gap-4 mt-10"
         style={{
           opacity: visible ? 1 : 0,
@@ -337,7 +337,7 @@ export default function ExecutiveLeadership() {
           </svg>
         </button>
 
-        {/* Dot indicators */}
+      
         <div className="flex gap-2">
           {executives.map((_, i) => (
             <button
@@ -383,7 +383,7 @@ export default function ExecutiveLeadership() {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
     </section>
   );
 }

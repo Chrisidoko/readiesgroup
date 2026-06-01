@@ -32,9 +32,8 @@ export default function IntroSection() {
           <p className="text-gray-900 text-xl md:text-2xl font-semibold leading-snug mb-4">
             <span className="font-bold">READIESGROUP</span>{" "}
             <span className="text-gray-500 font-normal text-base md:text-lg">
-              A Technology Holding Company (TechHoldCo) and innovation investor
-              shaping the future of work, finance, digital experiences, and
-              human possibility.
+              A Technology group of companies shaping the future of investment
+              finance, banking, digital transactions, and consulting.
             </span>
           </p>
         </div>
