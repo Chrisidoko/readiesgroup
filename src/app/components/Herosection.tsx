@@ -9,7 +9,6 @@ const partners = [
   { name: "D`namaz Capital", src: "/logos/visa.svg" },
   { name: "Golden Securities", src: "/logos/mastercard.svg" },
   { name: "Readiespay Gateway", src: "/logos/interswitch.svg" },
-  { name: "Manam Professional", src: "/logos/access-bank.svg" },
   { name: "Readies MFB", src: "/logos/flutterwave.svg" },
   // { name: "SEC Nigeria", src: "/logos/sec.svg" },
 ];
@@ -160,9 +159,9 @@ export default function HeroSection() {
             transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
           }}
         >
-          One group. Powerful platforms for seamless payments, accessible
-          microfinance, and intelligent investing. Built for individuals and
-          businesses across Africa.
+          Powerful platforms for seamless payments, accessible microfinance, and
+          intelligent investing. Built for individuals and businesses across
+          Africa.
         </p>
 
         {/* CTAs */}
@@ -222,7 +221,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <p className="text-white/40 text-xs tracking-[0.15em] uppercase flex-shrink-0">
-              Our Subsidiaries
+              Our Partners
             </p>
 
             {/* Partner flip ticker strip */}
@@ -324,7 +323,7 @@ function PartnerLogoFlip({
         <div
           className="rounded flex items-center justify-center"
           style={{
-            width: "80px",
+            width: "120px",
             height: "28px",
             background: "rgba(255,255,255,0.12)",
             border: "1px solid rgba(255,255,255,0.18)",

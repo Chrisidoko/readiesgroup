@@ -37,8 +37,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed">
-              Africa's technology-driven financial group — payments, banking,
-              and investing in one ecosystem.
+              Africa&apos;s technology-driven financial group — payments,
+              banking, and investing in one ecosystem.
             </p>
 
             {/* Socials */}

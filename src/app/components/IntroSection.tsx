@@ -30,10 +30,10 @@ export default function IntroSection() {
           style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
         >
           <p className="text-gray-900 text-xl md:text-2xl font-semibold leading-snug mb-4">
-            <span className="font-bold">READIESGROUP</span>{" "}
+            <span className="font-bold">READIES</span>{" "}
             <span className="text-gray-500 font-normal text-base md:text-lg">
-              A Technology group of companies shaping the future of investment
-              finance, banking, digital transactions, and consulting.
+              A Technology company shaping the future of investment finance,
+              banking, digital transactions, and consulting.
             </span>
           </p>
         </div>

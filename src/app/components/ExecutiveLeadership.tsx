@@ -143,7 +143,7 @@ export default function ExecutiveLeadership() {
           The People Behind the Vision
         </p>
         <h2 className="text-4xl md:text-5xl font-bold text-[#0F1C3F] mb-5 tracking-tight">
-          Executive Leadership
+          Our Board of Directors
         </h2>
         <p className="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
           Our senior leadership team brings deep expertise across fintech,

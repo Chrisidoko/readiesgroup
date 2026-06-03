@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Businesses we serve", href: "#businesses-we-serve" },
-  { label: "Portfolio", href: "#portfolio" },
   { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Businesses we serve", href: "#businesses-we-serve" },
   { label: "Careers", href: "#careers" },
 ];
 
@@ -38,7 +38,7 @@ export default function Navbar() {
               className="text-white font-bold text-xl tracking-tight"
               style={{ letterSpacing: "-0.02em" }}
             >
-              ReadiesGroup<span style={{ color: "#DC2626" }}>.</span>
+              Readies<span style={{ color: "#03D16A" }}>.</span>
             </span>
           </Link>
 

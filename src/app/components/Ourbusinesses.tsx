@@ -107,22 +107,27 @@ function RedirectOverlay({
   label: string;
   onCancel: () => void;
 }) {
+  // Reset progress whenever visible changes to false — no effect needed
   const [progress, setProgress] = useState(0);
 
+  // initialise progress based on visible directly:
   useEffect(() => {
     if (!visible) {
-      setProgress(0);
-      return;
+      // Use a microtask to avoid synchronous setState in effect body
+      const id = setTimeout(() => setProgress(0), 0);
+      return () => clearTimeout(id);
     }
+
     const start = performance.now();
-    // Made an edit here --- check for later
-    const duration = 6000; // ms — matches the redirect delay
+    const duration = 3000;
     let frame: number;
+
     const tick = (now: number) => {
       const p = Math.min((now - start) / duration, 1);
       setProgress(p);
       if (p < 1) frame = requestAnimationFrame(tick);
     };
+
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [visible]);
@@ -526,7 +531,7 @@ export default function OurBusinesses() {
       redirectTimer.current = setTimeout(() => {
         setOverlayVisible(false);
         window.open(href, "_blank", "noopener,noreferrer");
-      }, 6000);
+      }, 3000);
     },
     [],
   );
