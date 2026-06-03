@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "About", href: "#about" },
@@ -33,13 +34,22 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <div className="flex gap-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          {/* <Link href="/" className="flex items-center gap-2.5 group">
             <span
               className="text-white font-bold text-xl tracking-tight"
               style={{ letterSpacing: "-0.02em" }}
             >
               Readies<span style={{ color: "#03D16A" }}>.</span>
             </span>
+          </Link> */}
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <Image
+              src="/readies-gold.png"
+              alt="ReadiesGroup Logo"
+              width={120}
+              height={32}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}
