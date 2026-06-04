@@ -36,7 +36,7 @@ const businesses: Business[] = [
   },
   {
     id: 2,
-    title: "Microfinance Bank",
+    title: "Kura Microfinance Bank",
     categories: ["Banking", "Lending", "Finance"],
     description:
       "Democratizing access to financial services for individuals and SMEs. From nano-loans to business credit lines — banking built for the underserved.",
