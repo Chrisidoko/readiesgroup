@@ -589,7 +589,7 @@ export default function OurBusinesses() {
               Our Businesses
             </h2>
             <p className="text-[#4B5563] text-base md:text-lg max-w-xl leading-relaxed">
-              As a technology-driven group, our portfolio spans the full
+              As a technology-driven company, our portfolio spans the full
               financial ecosystem — built to power Africa&apos;s digital
               economy.
             </p>
