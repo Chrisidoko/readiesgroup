@@ -9,7 +9,7 @@ const partners = [
   { name: "D`namaz Capital", src: "/logos/visa.svg" },
   { name: "Golden Securities", src: "/logos/mastercard.svg" },
   { name: "Readiespay Gateway", src: "/logos/interswitch.svg" },
-  { name: "Readies MFB", src: "/logos/flutterwave.svg" },
+  { name: "Kura MFB", src: "/logos/flutterwave.svg" },
   // { name: "SEC Nigeria", src: "/logos/sec.svg" },
 ];
 
