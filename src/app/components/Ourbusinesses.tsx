@@ -20,10 +20,10 @@ interface Business {
 const businesses: Business[] = [
   {
     id: 1,
-    title: "Payment Gateway",
-    categories: ["Fintech", "Payments", "API"],
+    title: "Readies",
+    categories: ["Fintech", "Collections", "API"],
     description:
-      "A seamless, secure payment infrastructure powering thousands of transactions across Africa. Accept cards, bank transfers, and mobile money with record processing speeds.",
+      "A seamless, secure infrastructure powering thousands of transactions across Africa. Accept cards, bank transfers, and mobile money with record processing speeds.",
     accent: "#2563EB",
     bgGradient: "from-blue-900 via-blue-800 to-slate-900",
     // stats: [
@@ -53,7 +53,7 @@ const businesses: Business[] = [
   {
     id: 3,
     title: "All-in-One Platform",
-    categories: ["Asset Management", "Investments", "Trading"],
+    categories: ["Halal Investments ", "Banking", "Trading"],
     description:
       "Readies brings together mobile banking, halal investments, and stock trading into a single, seamless financial ecosystem — built for the modern Nigerian.",
     accent: "#DC2626",

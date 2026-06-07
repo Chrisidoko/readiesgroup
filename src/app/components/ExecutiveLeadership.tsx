@@ -45,7 +45,7 @@ const executives: Executive[] = [
     id: 4,
     name: "Abayomi Oyekola",
     title: "Chief Investment Officer",
-    bio: "Abayomi manages Readies' ₦5B+ AUM across fixed income, equities and alternative assets. She brings deep capital markets expertise from her tenure at Stanbic IBTC",
+    bio: "Abayomi manages Readies' ₦5B+ AUM across fixed income, equities and alternative assets. He brings deep capital markets expertise from her tenure at Stanbic IBTC",
     accentColor: "#7C3AED",
     bgColor: "#4c1d95",
     image: "/leadership/abayomi.jpg",

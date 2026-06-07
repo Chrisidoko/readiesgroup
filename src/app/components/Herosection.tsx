@@ -6,7 +6,7 @@ import Link from "next/link";
 // --- Trusted By Partners ---
 // Replace src with real logo image paths. Name is used as alt text.
 const partners = [
-  { name: "D`namaz Capital", src: "/logos/visa.svg" },
+  { name: "D`Namaz Capital", src: "/logos/visa.svg" },
   { name: "Golden Securities", src: "/logos/mastercard.svg" },
   { name: "Readiespay Gateway", src: "/logos/interswitch.svg" },
   { name: "Kura MFB", src: "/logos/flutterwave.svg" },
