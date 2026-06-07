@@ -37,8 +37,8 @@ export default function Footer() {
                 src="/readies-gold.png"
                 alt="ReadiesGroup Logo"
                 width={40}
-                height={20}
-                className="object-contain w-25 h-auto"
+                height={10}
+                className="object-contain w-26 h-auto"
               />
             </Link>
 
