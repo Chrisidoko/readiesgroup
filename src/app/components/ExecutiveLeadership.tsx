@@ -113,6 +113,7 @@ export default function ExecutiveLeadership() {
   return (
     <section
       ref={sectionRef}
+      id="leadership"
       className="relative w-full bg-white overflow-hidden py-20"
       style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
     >

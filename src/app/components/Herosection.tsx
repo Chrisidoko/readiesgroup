@@ -159,8 +159,8 @@ export default function HeroSection() {
             transition: "opacity 0.7s ease 0.35s, transform 0.7s ease 0.35s",
           }}
         >
-          Powerful platforms for seamless payments, accessible microfinance, and
-          intelligent investing. Built for individuals and businesses across
+          Powerful platforms for seamless transactions, accessible microfinance,
+          and intelligent investing. Built for individuals and businesses across
           Africa.
         </p>
 

@@ -16,7 +16,7 @@ const sectors: Sector[] = [
   {
     id: 1,
     label: "Retail & E-commerce",
-    tag: "PAYMENTS",
+    tag: "FINTECH",
     description:
       "Supercharge your checkout with instant payment acceptance, fraud detection, and multi-currency settlements.",
     image: "/images/sector-ecom.jpg",
@@ -50,7 +50,7 @@ const sectors: Sector[] = [
   {
     id: 4,
     label: "Logistics & Mobility",
-    tag: "PAYMENTS",
+    tag: "FINTECH",
     description:
       "Fleet payments, driver wallets, and real-time earnings disbursement for the movement economy.",
     image: "/images/sector-logistics.png",
@@ -79,14 +79,7 @@ const sectors: Sector[] = [
   },
 ];
 
-const TABS = [
-  "All",
-  "Payments",
-  "Banking",
-  "Microfinance",
-  "Investments",
-  "Fintech",
-];
+const TABS = ["All", "Banking", "Microfinance", "Investments", "Fintech"];
 
 // Placeholder image gradient (removed once real images are added)
 const placeholderGradients = [

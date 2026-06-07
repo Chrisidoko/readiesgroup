@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const links = {
   Products: [
-    { label: "Payment Gateway", href: "#" },
-    { label: "Microfinance Bank", href: "#" },
-    { label: "Investment Platform", href: "#" },
+    { label: "Readies Collections", href: "https://readies.ng/" },
+    { label: "Microfinance Bank", href: "https://kuramfb.com/" },
+    { label: "Investment Platform", href: "https://readies.ng/" },
   ],
   Company: [
-    { label: "About Us", href: "#" },
-    { label: "Leadership", href: "#" },
+    { label: "About Us", href: "#about" },
+    { label: "Leadership", href: "#leadership" },
     { label: "Careers", href: "#" },
   ],
   Legal: [
@@ -37,8 +37,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/40 text-sm leading-relaxed">
-              Africa&apos;s technology-driven financial group — payments,
-              banking, and investing in one ecosystem.
+              Africa&apos;s technology-driven financial group powering
+              collections, banking, and investments in one ecosystem.
             </p>
 
             {/* Socials */}
