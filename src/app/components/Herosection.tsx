@@ -8,7 +8,7 @@ import Link from "next/link";
 const partners = [
   { name: "D`Namaz Capital", src: "/logos/visa.svg" },
   { name: "Golden Securities", src: "/logos/mastercard.svg" },
-  { name: "Readiespay Gateway", src: "/logos/interswitch.svg" },
+  { name: "Readies", src: "/logos/interswitch.svg" },
   { name: "Kura MFB", src: "/logos/flutterwave.svg" },
   // { name: "SEC Nigeria", src: "/logos/sec.svg" },
 ];

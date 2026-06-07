@@ -537,7 +537,7 @@ export default function BusinessesWeServe() {
           />
           <a
             // href="#contact"
-            href="mailto:info@readiesgroup.com"
+            href="/partner_with_us"
             className="flex items-center gap-2 text-white/50 text-sm font-medium hover:text-white transition-colors duration-200"
             style={{ fontFamily: "'Sora', sans-serif" }}
           >

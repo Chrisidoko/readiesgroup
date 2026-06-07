@@ -5,7 +5,7 @@ export default function IntroSection() {
     <section id="about" className="w-full bg-white px-8 md:px-12 py-20 mx-auto">
       {/* Section label */}
       <div
-        className="text-5xl font-semibold pb-20"
+        className="text-5xl font-semibold pb-20 text-gray-900"
         style={{ fontFamily: "'Sora', 'DM Sans', sans-serif" }}
       >
         Powering the largest financial networks. Built for tomorrow&apos;s

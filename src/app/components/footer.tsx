@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const links = {
   Products: [
     { label: "Readies Collections", href: "https://readies.ng/" },
     { label: "Microfinance Bank", href: "https://kuramfb.com/" },
-    { label: "Investment Platform", href: "https://readies.ng/" },
+    { label: "All in One Finance", href: "https://readies.ng/" },
   ],
   Company: [
     { label: "About Us", href: "#about" },
@@ -31,11 +32,16 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-20">
           {/* Brand */}
           <div className="flex-shrink-0 max-w-xs">
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="text-white font-bold text-lg tracking-tight">
-                ReadiesGroup<span style={{ color: "#DC2626" }}>.</span>
-              </span>
-            </div>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/readies-gold.png"
+                alt="ReadiesGroup Logo"
+                width={40}
+                height={20}
+                className="object-contain w-25 h-auto"
+              />
+            </Link>
+
             <p className="text-white/40 text-sm leading-relaxed">
               Africa&apos;s technology-driven financial group powering
               collections, banking, and investments in one ecosystem.

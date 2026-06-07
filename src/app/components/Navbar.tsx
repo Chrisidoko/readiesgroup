@@ -32,7 +32,7 @@ export default function Navbar() {
       }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <div className="flex gap-8">
+        <div className="flex gap-18 items-center">
           {/* Logo */}
           {/* <Link href="/" className="flex items-center gap-2.5 group">
             <span
@@ -46,9 +46,9 @@ export default function Navbar() {
             <Image
               src="/readies-gold.png"
               alt="ReadiesGroup Logo"
-              width={120}
+              width={110}
               height={32}
-              className="object-contain"
+              className="object-contain mb-2"
             />
           </Link>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             // href="#get-started"
-            href="mailto:info@readiesgroup.com"
+            href="/partner_with_us"
             className="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white transition-all duration-300 hover:gap-3"
             style={{
               background: "#03d16a",

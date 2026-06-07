@@ -46,7 +46,7 @@ const businesses: Business[] = [
     //   { label: "Loan Disbursed", value: "₦2B+" },
     //   { label: "Customers", value: "50K+" },
     // ],
-    link: "/#",
+    link: "https://kuramfb.com/",
     image: "/images/gateway.jpg",
     video: "/videos/banking.mp4",
   },
@@ -577,7 +577,7 @@ export default function OurBusinesses() {
         />
 
         {/* Header */}
-        <div className="relative px-8 mt-30 md:px-16 pt-16 pb-8">
+        <div className="relative px-8 mt-10 md:px-16 pt-16 pb-8">
           <div
             style={{
               opacity: visible ? 1 : 0,
